@@ -1,0 +1,15 @@
+<html ng-app="App">
+<head>
+  <title>Updating Notification Panel in AngularJS</title>
+  <script src="../bower_components/angular/angular.js"></script>
+</head>
+<body>
+  <div>{{notification || 'No Message found.'}}</div>
+
+  <script type="text/javascript">
+    angular.module('App', []).run(function($rootScope) {
+      $rootScope.notification = 'Learned Angular Data Binding, Today';
+    });
+  </script>
+</body>
+</html>

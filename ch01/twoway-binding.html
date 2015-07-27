@@ -1,0 +1,16 @@
+<html ng-app="App">
+<head>
+  <title>Two way Data Binding with Form Controls</title>
+  <script src="../bower_components/angular/angular.js"></script>
+</head>
+<body>
+  <input type='checkbox' ng-model='choose' />
+  <div>{{choose}}</div>
+
+  <button ng-click="choose=!choose">Toggle Checkbox</button>
+
+  <script type="text/javascript">
+    angular.module('App', []);
+  </script>
+</body>
+</html>

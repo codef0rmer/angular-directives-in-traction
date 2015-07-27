@@ -1,0 +1,48 @@
+<html ng-app="App">
+<head>
+  <title>Jasmine with AngularJS</title>
+  <link rel="stylesheet" type="text/css" href="../css/jasmine.css">
+  <script type="text/javascript" src="../bower_components/jquery/jquery.js"></script>
+  <script type="text/javascript" src="../vendors/jasmine.js"></script>
+  <script type="text/javascript" src="../vendors/jasmine-html.js"></script>
+  <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="../bower_components/angular-mocks/angular-mocks.js"></script>
+  
+  <!-- Chapter 1 -->
+  <script type="text/javascript"  src="../js/ch01/di.js"></script>
+  <script type="text/javascript"  src="specs/ch01/di-unit.js"></script>
+  <script type="text/javascript" src="../js/ch01/angular-template.js"></script>
+  <script type="text/javascript" src="specs/ch01/angular-template-unit.js"></script>
+</head>
+<body>
+  <script type="text/javascript">    
+    // --- Runner -------------------------
+    (function () {
+        var jasmineEnv = jasmine.getEnv();
+        jasmineEnv.updateInterval = 1000;
+
+        var htmlReporter = new jasmine.HtmlReporter();
+
+        jasmineEnv.addReporter(htmlReporter);
+
+        jasmineEnv.specFilter = function (spec) {
+            return htmlReporter.specFilter(spec);
+        };
+
+        var currentWindowOnload = window.onload;
+
+        window.onload = function () {
+            if (currentWindowOnload) {
+                currentWindowOnload();
+            }
+            execJasmine();
+        };
+
+        function execJasmine() {
+            jasmineEnv.execute();
+        }
+
+    })();
+  </script>
+</body>
+</html>

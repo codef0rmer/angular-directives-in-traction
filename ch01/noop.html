@@ -1,0 +1,27 @@
+<html ng-app="App">
+<head>
+  <title>Basic Directive: noop</title>
+  <script src="../bower_components/angular/angular.js"></script>
+  <script type="text/javascript">
+    var App = angular.module('App', []);
+
+    App.directive('noop', function() {
+      var count = 1;
+
+      return {
+        compile: function(cElement) {
+          cElement.html('I am noop {{counter}}');
+
+          return function link(scope, element) {
+            scope.counter = count;
+            count++;
+          }
+        }
+      };
+    });
+  </script>
+</head>
+<body>
+  <div noop ng-repeat="item in [1, 2, 3, 4, 5]"></div>
+</body>
+</html>
