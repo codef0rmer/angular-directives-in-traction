@@ -1,9 +1,9 @@
-Angular Directives in Traction
+AngularJS Directives in Traction
 =========
 
 AngularJS is a super-heroic JavaScript Framework that makes writing single page applications a breeze. It allows you to expand HTML vocabulary by creating custom tags with a help of directive definition object. AngularJS bundled with a set of directives like ngRepeat, ngModel, ngView which make it really easy to build an application but many a times the existing directives fell short considering the need and complexity you are dealing with. And you face the problem head-on when it comes to build directives from ground ups. This book teaches you to extend AngularJS by writing custom directives and motivates to understand the purpose of testing by facilitating Test Driven Development through out the book.
 
-**Angular Directives** in Traction helps you understand how built-in directives work and teaches you to build custom directives on your own. Ultimately, Angular Directives will be the magic revealed for you.
+**[AngularJS Directives in Traction](https://amitgharat.wordpress.com/2015/07/28/angularjs-directives-in-traction/)** helps you understand how built-in directives work and teaches you to build custom directives on your own. Ultimately, Angular Directives will be the magic revealed for you.
 
 Installation
 --------------
@@ -44,7 +44,7 @@ Using the Companion Suite
 Table of Contents
 -----------
 
-1. AngularJS Directives: A forerunner of Web Components
+1. [AngularJS Directives: A forerunner of Web Components](https://amitgharat.wordpress.com/2015/07/28/angularjs-directives-a-forerunner-of-web-components/)
 2. AngularJS Fundamentals: A Crash Course
 3. Testing the Beast: Unit testing and E2E testing
 4. Building your first HTML element using the API
