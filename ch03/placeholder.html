@@ -1,0 +1,13 @@
+<html ng-app="PlaceholderApp">
+<head>
+  <title>Placeholder Directive</title>
+  <!--<script type="text/javascript" src="http://code.angularjs.org/snapshot/angular.js"></script>-->
+  <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="../js/ch03/placeholder.js"></script>
+  <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+</head>
+<body ng-controller="ProfileCtrl">
+  <img ng-src="{{userImage}}" class="img-circle" on-image-load/>
+  <img ng-src="{{userImageFail}}" class="img-circle" on-image-load/>
+</body>
+</html>

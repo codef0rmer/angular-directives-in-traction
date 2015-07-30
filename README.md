@@ -54,6 +54,9 @@ Using the Companion Suite
  * controller-nested.html
  * instant-search.html
 
+*Chapter 3: ch03/*
+ * placeholder.html
+ 
 Table of Contents
 -----------
 

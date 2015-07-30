@@ -19,7 +19,9 @@ module.exports = function(config) {
       'bower_components/angular-mocks/angular-mocks.js',
       'js/ch01/angular-template.js',
       'js/ch01/di.js',
-      'tests/specs/ch01/*-unit.js'
+      'tests/specs/ch01/*-unit.js',
+      'js/ch03/placeholder.js',
+      'tests/specs/ch03/*-unit.js'
     ],
 
 
