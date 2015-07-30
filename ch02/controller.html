@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <title>Controller in AngularJS</title>
+    <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="../js/ch02/controller.js"></script>
+  </head>
+  <body ng-app="CtrlDemo">
+    <div ng-controller="BODCtrl">
+      We're the 
+      <b>{{person.role}} a.k.a {{person.aka}}</b>
+      and responsible 
+      <b>{{person.job}}.</b>
+    </div>
+
+    <div ng-controller="CEOCtrl">
+      I'm the 
+      <b>{{person.role}}</b>
+      and responsible 
+      <b>{{person.job}}.</b>
+    </div>
+  </body>
+</html>

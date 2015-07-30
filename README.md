@@ -41,6 +41,19 @@ Using the Companion Suite
  * accordion-ab.html
  * noop.html
 
+*Chapter 2: ch02/*
+ * value.html
+ * constant.html
+ * factory.html
+ * service.html
+ * provider.html
+ * filter.html
+ * config.html
+ * modeling.html
+ * controller.html
+ * controller-nested.html
+ * instant-search.html
+
 Table of Contents
 -----------
 

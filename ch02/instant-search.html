@@ -1,0 +1,17 @@
+<html ng-app="InstantDemo">
+<head>
+  <title>Intant Search in AngularJS</title>
+  <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="../js/ch02/instant-search.js"></script>
+  <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+</head>
+<body style="padding:20px;">
+  <div ng-controller="InstantCtrl">
+    <input type='text' ng-model="search" /><br><br>
+
+    <ul class="list-group">
+      <li class="list-group-item" ng-repeat="favorite in favorites | filter: search" ng-bind="favorite"></li>
+    </ul>
+  </div>
+</body>
+</html>

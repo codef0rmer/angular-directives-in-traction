@@ -1,0 +1,29 @@
+<html ng-app="CtrlDemo">
+<head>
+  <title>Controller (Nested) in AngularJS</title>
+  <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="../js/ch02/controller-nested.js"></script>
+</head>
+<body>
+  <div ng-controller="BODCtrl as bod">
+    We're the 
+    <!-- double curly notation -->
+    <!-- <b>{{person.role}} a.k.a. {{person.aka}}</b> -->
+    <b ng-bind-template="{{person.role}} a.k.a. {{person.aka}}" ng-click="person.role='BODs'"></b>
+    and responsible 
+    <b>{{person.job}}.</b>
+
+    <!-- or as an HTML string -->
+    <!-- <span ng-bind-html="statement"></span> -->
+
+    <div ng-controller="CEOCtrl">
+      I'm the 
+      <b>{{person.role}}</b>
+      and responsible 
+      <b>{{person.job}}</b>
+      but reporting to 
+      <i>{{bod.person.role}}.</i>
+    </div>
+  </div>
+</body>
+</html>
