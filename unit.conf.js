@@ -24,7 +24,9 @@ module.exports = function(config) {
       'js/ch03/placeholder.js',
       'tests/specs/ch03/*-unit.js',
       'js/ch04/super-marquee.js',
-      'tests/specs/ch04/*-unit.js'
+      'tests/specs/ch04/*-unit.js',
+      'js/ch05/scope-isolate.js',
+      'tests/specs/ch05/*-unit.js'
     ],
 
 

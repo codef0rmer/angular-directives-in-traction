@@ -1,0 +1,14 @@
+<html ng-app="SpinnerApp">
+<head>
+  <title>Scope: true</title>
+  <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+  <!--<script type="text/javascript" src="http://code.angularjs.org/snapshot/angular.js"></script>-->
+  <script type="text/javascript" src="../js/ch05/scope-true.js"></script>
+  <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.css">  
+</head>
+<body style="padding: 50px;" ng-controller="ScopeCtrl">
+  <adia-spinner data-default="{{value}}" data-min="1" data-max="5" data-interval="2"></adia-spinner>
+
+  <adia-spinner data-type="list" data-list="['Sun', 'Mon', 'Tue', 'Wed', 'Thur', 'Fri', 'Sat']"></adia-spinner>
+</body>
+</html>

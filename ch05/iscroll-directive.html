@@ -1,0 +1,85 @@
+<html ng-app="App">
+<head>
+  <title>iScroll Angular Directive</title>
+  <!--<script type="text/javascript" src="http://code.angularjs.org/snapshot/angular.js"></script>-->
+  <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="../bower_components/iscroll/build/iscroll.js"></script>
+  <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+  <script type="text/javascript">
+    var App = angular.module('App', []);
+
+    App.directive('iscroll', function() {
+      return {
+        restrict: 'EAC',
+        scope: {
+          scrollbars: '=?',
+          mousewheel: '=?'
+        },
+        link: function(scope, element) {
+          var myScroll = null;
+
+          scope.$watch(function() {
+            if (myScroll) {
+              myScroll.refresh();
+            } else {
+              myScroll = new IScroll(element[0], {
+                scrollbars: angular.isDefined(scope.scrollbars) ? scope.scrollbars : true,
+                mouseWheel: angular.isDefined(scope.mousewheel) ? scope.mousewheel : true
+              });
+            }
+          });
+        }
+      }
+    });
+
+    App.controller('MainCtrl', function($scope) {
+      $scope.movies = [
+        'Her', 
+        'Amazing Spiderman 3D', 
+        'Silicon Valley HBO', 
+        'Anchorman 2', 
+        '300 Rise of an Empire', 
+        'The Hobbit The Desolation of Smaug', 
+        'Fandry', 
+        '12 Years a Slave', 
+        'Frozen', 
+        'Ender`s Game', 
+        'Gravity', 
+        'Riddick', 
+        'Jobs', 
+        'The Hobbit The Unexpected Journey', 
+        'Man of Steel', 
+        'Turbo', 
+        'After Earth', 
+        'Europa Report', 
+        'Forest Gump', 
+        'Now You See Me'
+      ];
+    });
+  </script>
+  <style type="text/css">
+    #wrapper {
+      width: 280px;
+      height: 202px;
+      overflow: hidden;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -140px;
+      margin-top: -101px;
+    }
+  </style>
+</head>
+<body ng-controller="MainCtrl">
+  <div id="wrapper" iscroll data-scrollbars="true" data-mousewheel="true">
+    <div>
+      <ul class="list-group">
+        <li class="list-group-item" ng-repeat="movie in movies">
+          <button type="button" class="close" ng-click="movies.splice($index, 1)">&times;</button>
+          <span ng-bind="movie"></span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>

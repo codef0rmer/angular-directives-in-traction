@@ -67,17 +67,22 @@ Using the Companion Suite
  * super-marquee.html
  * iscroll-directive.html
 
+*Chapter 5: ch05/*
+ * scope-false.html
+ * scope-true.html
+ * scope-isolate.html
+ * iscroll-directive.html
+
 Table of Contents
 -----------
 
-1. [AngularJS Directives: A forerunner of Web Components](https://amitgharat.wordpress.com/2015/07/28/angularjs-directives-a-forerunner-of-web-components/)
+1. AngularJS Directives: A forerunner of Web Components
 2. AngularJS Fundamentals: A Crash Course
 3. Testing the Beast: Unit testing and E2E testing
 4. Building your first HTML element using the API
 5. Understanding Scope in Directives for better context
 6. Crafting directives to handle Complex Scenarios
 7. Bringing directives to Life
-8. Making Directives Robust: The Guidelines
 
 License
 ----
