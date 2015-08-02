@@ -1,0 +1,97 @@
+<html ng-app="MarqueeApp">
+<head>
+  <title>Final Extended superMarquee</title>
+  <!-- v1.10.2 is literally not required but was added later to avoid jquery issue while appending EMPTY SPACE to element and fix failing tests -->
+  <script type="text/javascript" src="../bower_components/jquery/jquery.js"></script>
+  <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+  <!--<script type="text/javascript" src="http://code.angularjs.org/snapshot/angular.js"></script>-->
+  <script type="text/javascript" src="../js/ch04/super-marquee.js"></script>
+  <style type="text/css">
+    div.wave-wrapper {
+      width: 500px;
+      height: 100px;
+      line-height: 100px;
+      overflow: hidden;
+    }
+
+    div.wave {      
+      white-space: nowrap;
+    }
+
+    @-webkit-keyframes right {
+      0%   { -webkit-transform: translateX(500px);  }
+      100% { -webkit-transform: translateX(-250px); }
+    }
+    @-ms-keyframes right {
+      0%   { -ms-transform: translateX(500px);  }
+      100% { -ms-transform: translateX(-250px); }
+    }
+    @keyframes right {
+      0%   { transform: translateX(500px);  }
+      100% { transform: translateX(-250px); }
+    }
+
+    @-webkit-keyframes left {
+      0%   { -webkit-transform: translateX(-250px); }
+      100% { -webkit-transform: translateX(500px);  }
+    }
+    @-ms-keyframes left {
+      0%   { -ms-transform: translateX(-250px); }
+      100% { -ms-transform: translateX(500px);  }
+    }
+    @keyframes left {
+      0%   { transform: translateX(-250px); }
+      100% { transform: translateX(500px);  }
+    }
+
+    @-webkit-keyframes down {
+      0%   { -webkit-transform: translateY(-50px); }
+      100% { -webkit-transform: translateY(100px); }
+    }
+    @-ms-keyframes down {
+      0%   { -ms-transform: translateY(-50px); }
+      100% { -ms-transform: translateY(100px); }
+    }
+    @keyframes down {
+      0%   { transform: translateY(-50px); }
+      100% { transform: translateY(100px); }
+    }
+
+    @-webkit-keyframes up {
+      0%   { -webkit-transform: translateY(100px); }
+      100% { -webkit-transform: translateY(-50px); }
+    }
+    @-moz-keyframes up {
+      0%   { -moz-transform: translateY(100px); }
+      100% { -moz-transform: translateY(-50px); }
+    }
+    @-ms-keyframes up {
+      0%   { -ms-transform: translateY(100px); }
+      100% { -ms-transform: translateY(-50px); }
+    }
+
+    @-webkit-keyframes bump {
+      from { -webkit-transform: translateY(-10px); }
+      to   { -webkit-transform: translateY(10px);  }
+    }
+    @-ms-keyframes bump {
+      from { -ms-transform: translateY(-10px); }
+      to   { -ms-transform: translateY(10px);  }
+    }
+    @keyframes bump {
+      from { transform: translateY(-10px); }
+      to   { transform: translateY(10px);  }
+    }
+  </style>
+</head>
+<body>
+  <!-- Element -->
+  <super-marquee looper validate data-text="AngularJS Directives inAction, Yey..!!" data-scrolldelay="2" data-direction="up" data-wavedelay="0.015"></super-marquee>
+
+  <!-- Attribute -->
+  <!-- <div looper super-marquee looper validate data-text="AngularJS Directives inAction, Yey..!!" data-scrolldelay="10" data-direction="left" data-wavedelay="0.015"></div> -->
+
+  <!-- Class -->
+  <!-- <div class='super-marquee looper validate' data-text="AngularJS Directives inAction, Yey..!!" data-scrolldelay="10" data-direction="right" data-wavedelay="0.015"></div> -->
+</body>
+</html>

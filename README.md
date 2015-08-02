@@ -56,7 +56,17 @@ Using the Companion Suite
 
 *Chapter 3: ch03/*
  * placeholder.html
- 
+
+*Chapter 4: ch04/*
+ * restrict.html
+ * template.html
+ * templateUrl.html
+ * replace.html
+ * priority.html
+ * terminal.html
+ * super-marquee.html
+ * iscroll-directive.html
+
 Table of Contents
 -----------
 

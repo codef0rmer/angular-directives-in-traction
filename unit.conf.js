@@ -15,13 +15,16 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
+      'bower_components/jquery/jquery.js',
       'bower_components/angular/angular.js',
       'bower_components/angular-mocks/angular-mocks.js',
       'js/ch01/angular-template.js',
       'js/ch01/di.js',
       'tests/specs/ch01/*-unit.js',
       'js/ch03/placeholder.js',
-      'tests/specs/ch03/*-unit.js'
+      'tests/specs/ch03/*-unit.js',
+      'js/ch04/super-marquee.js',
+      'tests/specs/ch04/*-unit.js'
     ],
 
 

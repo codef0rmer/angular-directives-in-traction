@@ -1,0 +1,64 @@
+<html ng-app="MarqueeApp">
+<head>
+  <title>Terminating invocation to stop further compilation</title>
+  <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+  <!--<script type="text/javascript" src="http://code.angularjs.org/snapshot/angular.js"></script>-->
+  <script type="text/javascript" src="../js/ch04/terminal.js"></script>
+  <style type="text/css">
+    marquee { padding-bottom: 20px; }
+
+    div.wave > span {
+      float: left;
+      text-align: center;
+      padding-right: 40px;
+      -webkit-animation: animate 1.5s ease-in alternate infinite;
+         -moz-animation: animate 1.5s ease-in alternate infinite;
+          -ms-animation: animate 1.5s ease-in alternate infinite;
+              animation: animate 1.5s ease-in alternate infinite;
+    }
+    div.wave > span:nth-child(1) {
+      // first word will use a delay from the base animation
+    }
+    div.wave > span:nth-child(2) {
+      -webkit-animation-delay: .4s;
+         -moz-animation-delay: .4s;
+          -ms-animation-delay: .4s;
+              animation-delay: .4s;
+    }
+    div.wave > span:nth-child(3) {
+      -webkit-animation-delay: .8s;
+         -moz-animation-delay: .8s;
+          -ms-animation-delay: .8s;
+              animation-delay: .8s;
+    }
+    div.wave > span:nth-child(4) {
+      -webkit-animation-delay: 1.2s;
+         -moz-animation-delay: 1.2s;
+          -ms-animation-delay: 1.2s;
+              animation-delay: 1.2s;
+    }
+
+    @-webkit-keyframes animate { to { margin-top: 100px; } }
+       @-moz-keyframes animate { to { margin-top: 100px; } }
+        @-ms-keyframes animate { to { margin-top: 100px; } }
+            @keyframes animate { to { margin-top: 100px; } }
+  </style>
+</head>
+<body>
+  <!-- Element -->
+  <super-marquee looper validate></super-marquee>
+
+  <!-- Attribute -->
+  <div looper super-marquee validate></div>
+
+  <!-- Class -->
+  <div class='super-marquee looper validate'></div>
+
+  <table border="1" width="100%" height="160px">
+    <tr>
+      <td height="30px">SuperMarquee Live Demo</td>      
+    </tr>
+    <!-- directive: super-marquee -->
+  </table>
+</body>
+</html>

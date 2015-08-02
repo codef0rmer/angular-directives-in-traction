@@ -64,7 +64,8 @@ exports.config = {
   // by that suite will run.
   suites: {
     ch1: 'tests/specs/ch01/*-e2e.js',
-    ch3: 'tests/specs/ch03/*-e2e.js'
+    ch3: 'tests/specs/ch03/*-e2e.js',
+    ch4: 'tests/specs/ch04/*-e2e.js'
   },
 
   // ----- Capabilities to be passed to the webdriver instance ----
