@@ -1,0 +1,30 @@
+<html ng-app="App">
+<head>
+  <title>Understanding $apply</title>
+  <script src="../bower_components/angular/angular.js"></script>
+  <script>
+    var App = angular.module('App', []);
+
+    App.run(function($rootScope) {
+      $rootScope.alert = function($event) {
+        alert($event.target.textContent);
+      };
+
+      $rootScope.binding1 = function() {
+        console.log('Run:binding1');
+        return 'binding1 ';
+      };
+
+      $rootScope.binding2 = function() {
+        console.log('Run:binding2');
+        return 'binding2';
+      };
+    });
+  </script>
+</head>
+<body>
+  <button ng-click="alert($event)">Knock, Knock, Who??</button>
+  <span ng-bind="binding1()"></span>
+  <span ng-bind="binding2()"></span>
+</body>
+</html>

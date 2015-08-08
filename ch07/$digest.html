@@ -1,0 +1,51 @@
+<html ng-app="App">
+<head>
+  <title>Understanding $digest</title>
+  <script src="../bower_components/angular/angular.js"></script>
+  <script>
+    var App = angular.module('App', []);
+
+    App.run(function($rootScope) {
+      $rootScope.alert = function($event) {
+        alert($event.target.textContent);
+      };
+
+      $rootScope.binding1 = function() {
+        console.log('Run:binding1');
+        return 'binding1 ';
+      };
+
+      $rootScope.binding2 = function() {
+        console.log('Run:binding2');
+        return 'binding2';
+      };
+    });
+
+    App.directive('customClick', function($parse) {
+      return {
+        scope: true,
+        template: 'Custom Knock, Knock, who?? -> {{whoKnocked()}}',
+        link: function(scope, element, attrs) {
+          var fn = $parse(attrs.customClick);
+
+          element.on('click', function($event) {
+            scope.who = "I'm Batman";
+            scope.$digest();
+            fn(scope, {$event: $event});
+          });
+
+          scope.whoKnocked = function() {
+            console.log('customClick:whoKnocked');
+            return scope.who;
+          };
+        }
+      }
+    });
+  </script>
+</head>
+<body>
+  <button custom-click="alert($event)">Custom Knock, Knock, who??</button>
+  <span ng-bind="binding1()"></span>
+  <span ng-bind="binding2()"></span>
+</body>
+</html>

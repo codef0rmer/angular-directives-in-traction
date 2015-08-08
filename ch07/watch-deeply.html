@@ -1,0 +1,48 @@
+<html ng-app="App">
+<head>
+  <title>Understanding $watch</title>
+  <script src="../bower_components/angular/angular.js"></script>
+  <link href="../bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+  <style type="text/css">
+    .title {
+      text-align: center;
+      color: black;
+      font-size: 10px;
+      height: 150px;
+    }
+  </style>
+  <script type="text/javascript">
+  	var App = angular.module('App', []);
+
+    App.controller('DemoCtrl', function($scope) {
+      $scope.color = 'black';
+      $scope.fontSize = '10px';
+    });
+
+    App.directive('cover', function() {
+      return {
+        restrict: 'EA',
+        link: function(scope, element, attrs) {
+          scope.$watch(attrs.cover, function(newVal, oldVal) {
+            element.css(newVal);
+          }, true);
+        }
+      }
+    });
+  </script>
+</head>
+<body style="padding: 10px;" ng-controller="DemoCtrl">
+  <div class="row">
+    <div class="col-xs-3 col-md-2">
+      <a class="thumbnail alert-warning">
+        <div class="title" cover="{color: color, fontSize: fontSize}">AngularJS Directives in Action</div>
+        <img src="http://manning.com/images/logo.gif">
+      </a>
+    </div>
+  </div>
+  <button class='btn btn-default' ng-click="color = 'black'">&nbsp;</button>
+  <button class='btn btn-primary' ng-click="color = 'blue'">&nbsp;</button>
+  <button class='btn btn-info' ng-click="fontSize = '10px'"><small>10px</small></button>
+  <button class='btn btn-warning' ng-click="fontSize = '20px'">20px</button>
+</body>
+</html>

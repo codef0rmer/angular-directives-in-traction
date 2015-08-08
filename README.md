@@ -86,6 +86,15 @@ Using the Companion Suite
  * base-thumbnailviewer.html
  * thumbnail-viewer.html
 
+*Chapter 7: ch07/*
+ * $apply.html
+ * $digest.html
+ * watch-deeply.html
+ * iscroll-directive.html
+ * watch-spinner.html
+ * image-lazy-loader.html
+ * image-lazy-loader-fixed.html
+ 
 Table of Contents
 -----------
 
