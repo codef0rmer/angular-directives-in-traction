@@ -26,7 +26,9 @@ module.exports = function(config) {
       'js/ch04/super-marquee.js',
       'tests/specs/ch04/*-unit.js',
       'js/ch05/scope-isolate.js',
-      'tests/specs/ch05/*-unit.js'
+      'tests/specs/ch05/*-unit.js',
+      'js/ch06/ng-model-spinner.js',
+      'tests/specs/ch06/*-unit.js'
     ],
 
 

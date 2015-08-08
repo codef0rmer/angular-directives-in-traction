@@ -1,0 +1,26 @@
+<html ng-app="ngModelApp">
+<head>
+  <title>ngModel Controller</title>
+  <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="../js/ch06/ng-model.js"></script>
+  <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+</head>
+<body style="padding: 10px;">
+  <form name="MyForm" role="form">
+    <!-- <input ng-model="input" numeric ng-keypress="foobar()"> -->
+    <div class="alert alert-success" ng-hide="MyForm.$dirty"><b>Want to Join a Dream Company?</a></div>
+    <div class="alert alert-info" ng-hide="MyForm.$pristine"><b>Focus on your strengths to attract more recruiters!</a></div>
+
+    <div class="form-group" ng-class="{'has-error': MyForm.email.$invalid}">
+      <label class="control-label" for="email">Email address</label>
+      <input type="email" name="email" class="form-control" placeholder="Enter email" ng-model="email" is-unique>
+    </div>
+    <div class="form-group">
+      <label class="control-label">Willing to Relocate?</label>
+      <input type="checkbox" name="relocate" ng-model="relocate" will-relocate> {{MyForm.relocate.$viewValue}}
+    </div>
+
+    <button type="submit" class="btn btn-primary" ng-click="email = '';relocate = false;MyForm.$setPristine();">Apply</button>
+  </form>
+</body>
+</html>

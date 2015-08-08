@@ -1,0 +1,60 @@
+<html ng-app="ThumbApp">
+<head>
+  <title>ThumbViewer</title>
+  <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="../js/ch06/thumbviewer.js"></script>
+  <script type="text/javascript" src="../js/ch06/ng-model-spinner.js"></script>
+  <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+  <style type="text/css">
+    .thumbnail-container {
+      display: inline-block;
+      width: 100%;
+      overflow: hidden;
+      padding: 10px;
+    }
+    .thumbnail.active {
+      border: 4px solid #5cb85c;
+    }
+    .thumbnail-wrapper {
+      -webkit-transition: margin-left 0.5s ease;
+         -moz-transition: margin-left 0.5s ease;
+          -ms-transition: margin-left 0.5s ease; 
+           -o-transition: margin-left 0.5s ease;
+              transition: margin-left 0.5s ease;
+    }
+    img { width: 100%; }
+  </style>
+  <script type="text/ng-template" id="thumbviewer.html">
+    <div class='thumbnail-container bg-success img-rounded'>
+      <div class='thumbnail-wrapper' ng-style="wrapperStyle()" ng-transclude></div>
+      <div style="padding-top: 10px;">
+        <adia-spinner ng-model="thumbTracker" data-type="list" data-list="thumbList" on-change="updateThumb()"></adia-spinner>
+      </div>
+    </div>
+  </script>
+
+  <script type="text/ng-template" id="thumb.html">
+    <div class="thumbnail pull-left" ng-style="thumbnailStyle(this)" ng-class="{active: active}" ng-click="select(this)" ng-transclude></div>
+  </script>
+</head>
+<body style="padding: 0 10px 0 10px;" ng-controller="ThumbCtrl">
+  <h1>Dynamic</h1>
+  <thumbviewer data-size="150" data-gap="0" onselect="loadPage">
+    <thumb ng-repeat="thumbnail in thumbnails" active="thumbnail.active">
+      <div><img ng-src="../img/{{thumbnail.image}}"/></div>
+      <div class="caption text-center" ng-bind="thumbnail.title"></div>
+    </thumb>
+  </thumbviewer>
+  <h1>Static</h1>
+  <thumbviewer data-size="150" data-gap="10" onselect="loadPage">
+    <thumb>
+      <div><img src="../img/1.png"/></div>
+      <div class="caption text-center">Page 1</div>
+    </thumb>
+    <thumb>
+      <div><img src="../img/2.png"/></div>
+      <div class="caption text-center">Page 2</div>
+    </thumb>
+  </thumbviewer>
+</body>
+</html>

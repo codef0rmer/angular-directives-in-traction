@@ -1,0 +1,33 @@
+<html ng-app="ThumbApp">
+<head>
+  <title>ThumbViewer</title>
+  <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="../js/ch06/base.js"></script>
+  <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+  <style type="text/css">
+    .thumbnail-container {
+      display: inline-block;
+      width: 100%;
+      overflow: hidden;
+      padding: 10px;
+    }
+    img { width: 100%; }
+  </style>
+  <script type="text/ng-template" id="thumbviewer.html">
+    <div class='thumbnail-container bg-success img-rounded'>
+      <div class='thumbnail-wrapper'>
+        <!-- Page Thumbs go here -->
+      </div>
+    </div>
+  </script>
+
+  <script type="text/ng-template" id="thumb.html">
+    <div class="thumbnail pull-left"></div>
+  </script>
+</head>
+<body style="padding: 10px;" ng-controller="ThumbCtrl">
+  <thumbviewer data-size="150" data-gap="0">
+   
+  </thumbviewer>
+</body>
+</html>
